@@ -5,6 +5,8 @@ Nesse curso é ensinado como contrubuir com projetos de código aberto
 
 Link para o curso [python_Pro](https://www.python.pro.br)
 
+[![Build Status](https://travis-ci.org/JosemarBrito/libpythonbritoscode.svg?branch=master)](https://travis-ci.org/JosemarBrito/libpythonbritoscode)
+
 Suportado versão 3 de Python
 
 Para instalar:
