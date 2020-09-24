@@ -6,6 +6,8 @@ Nesse curso é ensinado como contrubuir com projetos de código aberto
 Link para o curso [python_Pro](https://www.python.pro.br)
 
 [![Build Status](https://travis-ci.org/JosemarBrito/libpythonbritoscode.svg?branch=master)](https://travis-ci.org/JosemarBrito/libpythonbritoscode)
+[![Updates](https://pyup.io/repos/github/JosemarBrito/libpythonbritoscode/shield.svg)](https://pyup.io/repos/github/JosemarBrito/libpythonbritoscode/)
+[![Python 3](https://pyup.io/repos/github/JosemarBrito/libpythonbritoscode/python-3-shield.svg)](https://pyup.io/repos/github/JosemarBrito/libpythonbritoscode/)
 
 Suportado versão 3 de Python
 
