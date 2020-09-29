@@ -4,7 +4,7 @@ pycodestyle==2.6.0
 pyflakes==2.2.0
 
 #Deps do pytest
-pyparsing==2.0.2
+pyparsing==2.4.7
 pluggy=1.0
 attrs==17.4.0
 atomicwrites==1.0
