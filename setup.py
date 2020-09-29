@@ -30,7 +30,8 @@ def find_package_data(
     exclude=standard_exclude,
     exclude_directories=standard_exclude_directories,
     only_in_packages=True,
-    show_ignored=False):
+        show_ignored=False):
+
     """
     Return a dictionary suitable for use in ``package_data``
     in a distutils ``setup.py`` file.
@@ -59,8 +60,7 @@ def find_package_data(
             if os.path.isdir(fn):
                 bad_name = False
                 for pattern in exclude_directories:
-                    if (fnmatchcase(name, pattern)
-                    or fn.lower() == pattern.lower()):
+                    if (not (not fnmatchcase(name, pattern) and not (fn.lower() == pattern.lower()))):
                         bad_name = True
                         if show_ignored:
                             print > sys.stderr, (
@@ -69,8 +69,7 @@ def find_package_data(
                         break
                 if bad_name:
                     continue
-                if (os.path.isfile(os.path.join(fn, "__init__.py"))
-                    and not prefix):
+                if (not (not os.path.isfile(os.path.join(fn, "__init__.py")) or prefix)):
                     if not package:
                         new_package = name
                     else:
@@ -82,11 +81,10 @@ def find_package_data(
                 # is a file
                 bad_name = False
                 for pattern in exclude:
-                    if (fnmatchcase(name, pattern)
-                        or fn.lower() == pattern.lower()):
+                    if (not (not fnmatchcase(name, pattern) and not (fn.lower() == pattern.lower()))):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
+                            print > sys.stderr, (
                                 "File %s ignored by pattern %s"
                                 % (fn, pattern))
                         break
@@ -96,8 +94,8 @@ def find_package_data(
     return out
 
 
-PACKAGE = "libpythonbritoscode"
-NAME = PACKAGE
+PACKAGE = "libpythonpro"
+NAME = "libapibuscarnome"
 DESCRIPTION = "Repositório para estudos de ferramentas Pytool do curso PythonPro"
 AUTHOR = "Josemar Brito"
 AUTHOR_EMAIL = "estudos.josemarbrito@gmail.com"
@@ -113,7 +111,7 @@ setup(
     long_description_content_type='text/markdown',
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
-    license=read('LICENSE'),
+    license='agpl',
     url=URL,
     packages=find_packages(exclude=["tests.*", "tests"]),
     package_data=find_package_data(PACKAGE, only_in_packages=False),
