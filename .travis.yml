@@ -2,9 +2,8 @@ language: python
 python:
   - 3.8
 install:
-  - pip install -r requirements-dev.txt codvoce
+  - pip install -r requirements-dev.txt
 script:
   - flake8
-  - pytest libpythonpro --cov=libpythonpro
-after_success:
-  - codecov
+  - pytest libpythonpro
+  -
