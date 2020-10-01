@@ -1,6 +1,6 @@
 import pytest
 
-from libpythonpro.spam.enviador_de_email import Enviador
+from libpythonpro.spam.enviador_de_email import Enviador, EmailInvalido
 
 
 def test_criar_enviador_de_email():
@@ -21,3 +21,18 @@ def test_remetente(destinatario):
         'Curso Python Pro',
         'Treinamento de ferramentas Pytools')
     assert destinatario in resultado
+
+
+@pytest.mark.parametrize(
+    'remetente',
+    ['estudos.josemarbrito', '.com']
+)
+def test_remetente_invalido(remetente):
+    enviador = Enviador()
+    with pytest.raises(EmailInvalido):
+        enviador.enviar(
+            remetente,
+            'josemarbritosantos@gmail.com',
+            'Curso Python Pro',
+            'Treinamento de ferramentas Pytools'
+        )
