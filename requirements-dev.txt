@@ -5,7 +5,7 @@ pyflakes==2.2.0
 
 #Deps do pytest
 pyparsing==2.0.2
-pluggy<1.0,==0.12
+pluggy==0.13.1
 attrs==17.4.0
 atomicwrites==1.0
 py==1.8.2
